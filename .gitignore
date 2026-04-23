@@ -1,0 +1,13 @@
+# Secrets and environment files
+.env
+.env.*
+*.env
+
+# API keys and credentials
+secrets.*
+credentials.*
+*.key
+
+# Python cache
+__pycache__/
+*.py[cod]
