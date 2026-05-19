@@ -11,3 +11,7 @@ credentials.*
 # Python cache
 __pycache__/
 *.py[cod]
+
+# Data files
+20172018_data.sav
+JGSS-20172018*
