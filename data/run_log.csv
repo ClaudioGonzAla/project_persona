@@ -1,0 +1,4 @@
+timestamp,model,persona_k,questions,n_personas,mean_jsd,valid_rate
+2026-05-20 20:23,llama,2,"op4trust,tr3cgmnz,tr3bcraz,qfnrincr,q4samesm,op7gdevo,q7wwhhx,q7jbmmcc,q7mgcc,q5gveqaa,opincdif,opnucpol,stalllf,nofutr,sfmhdprs,op5happz,opnbmtcn,wllive,mempltgp",2660,0.459,1.0
+2026-05-20 21:45,llama,16,"op4trust,tr3cgmnz,tr3bcraz,qfnrincr,q4samesm,op7gdevo,q7wwhhx,q7jbmmcc,q7mgcc,q5gveqaa,opincdif,opnucpol,stalllf,nofutr,sfmhdprs,op5happz,opnbmtcn,wllive,mempltgp",50,0.3,0.909
+2026-05-20 21:51,llama,8,"op4trust,tr3cgmnz,tr3bcraz,qfnrincr,q4samesm,op7gdevo,q7wwhhx,q7jbmmcc,q7mgcc,q5gveqaa,opincdif,opnucpol,stalllf,nofutr,sfmhdprs,op5happz,opnbmtcn,wllive,mempltgp",50,0.314,0.919

@@ -15,3 +15,4 @@ __pycache__/
 # Data files
 20172018_data.sav
 JGSS-20172018*
+data/metrics_df.csv
