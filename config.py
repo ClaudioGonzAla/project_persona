@@ -54,6 +54,19 @@ EXCLUDES = [
 
     # --- Redundant with age ---
     "dobyear",    # Date of birth: year — redundant with ageb, leaks cohort directly
+
+    # --- Duplicates / redundant re-codings ---
+    "marc",       # Marital Status — identical to domarry, which is already in CORE_DEMOGRAPHICS
+    "ppjbxx15",   # Occupation of Father at Age 15 (local JP coding) — redundant with ppjxxe08 (ISCO-08)
+
+    # --- Empty variables (zero valid responses in 2017/2018 wave) ---
+    "cc04why",    # Child 04: Reason for Temporarily Leaving Home
+    "cc05why",    # Child 05: Reason for Temporarily Leaving Home
+    "cc06why",    # Child 06: Reason for Temporarily Leaving Home
+    "cc07why",    # Child 07: Reason for Temporarily Leaving Home
+    "cc08why",    # Child 08: Reason for Temporarily Leaving Home
+    "cc09why",    # Child 09: Reason for Temporarily Leaving Home
+    "ssxgrade",   # School Year (Spouse) — not collected in 2017/2018 wave
 ]
 
 
@@ -61,10 +74,13 @@ EXCLUDES = [
 # 2. CORE DEMOGRAPHIC VARIABLES
 # ---------------------------------------------------------------------------
 # The fixed block included in every persona, regardless of TOP-k. These are
-# the baseline socio-demographic anchors. Income, class identity, and
-# political party support were deliberately moved to the RF pool (per the
-# 2023D proposal revision) so the TOP-k ranking can decide their relevance
-# rather than forcing their inclusion.
+# the baseline socio-demographic anchors.
+#
+# Swap from German paper baseline: szincoma (respondent annual income) replaces
+# domarry (marital status) as a fixed demographic. Marital status is moved to
+# the RF pool — it emerged as a top-5 predictor (via its duplicate marc) so
+# letting it compete data-driven is more principled. Income is fixed following
+# the German GGSS Personas paper (Rupprecht et al. 2025).
 #
 # Note: BLOCK (regional block) and PREF (prefecture) are STRIPPED from the
 # public JGSS-2017/2018 release. Only `size` (4-level municipality size) is
@@ -77,7 +93,8 @@ CORE_DEMOGRAPHICS = [
     "ageb",       # Age (continuous)
     "size",       # Municipality size (4-level urban/rural proxy)
     "xxlstsch",   # Last school attended (education)
-    "domarry",    # Marital status
+    "szincoma",   # Respondent annual income (overall, ordinal scale)
+    "ccnumttl",   # Total number of children
     "xjob1wk",    # Work status (currently working / not)
     "xxjob",      # Occupation
     "tpjbs",      # Employment status
