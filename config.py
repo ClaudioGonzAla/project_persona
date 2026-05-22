@@ -95,9 +95,9 @@ CORE_DEMOGRAPHICS = [
     "xxlstsch",   # Last school attended (education)
     "szincoma",   # Respondent annual income (overall, ordinal scale)
     "ccnumttl",   # Total number of children
-    "xjob1wk",    # Work status (currently working / not)
+    "xjob1wk",    # Work status (currently working / not) -- TO REVIEW!!
     "xxjob",      # Occupation
-    "tpjbs",      # Employment status
+    "tpjbs",      # Spouse employment status
     "tp4wpla",    # Workplace category / type of establishment
 ]
 
