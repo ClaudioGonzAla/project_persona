@@ -13,6 +13,7 @@ __pycache__/
 *.py[cod]
 
 # Data files
+Background*
 20172018_data*
 JGSS-2*
 data/metrics_df.csv

@@ -1,7 +1,8 @@
 timestamp,model,persona_k,questions,n_personas,sample_seed,mean_jsd,valid_rate
-2026-05-21 15:22,llama,2,"op4trust,tr3cgmnz,tr3bcraz,qfnrincr,q4samesm,op7gdevo,q7wwhhx,q7jbmmcc,q7mgcc,q5gveqaa,opincdif,opnucpol,stalllf,nofutr,sfmhdprs,op5happz,opnbmtcn,wllive,mempltgp",266,42,0.2539,1.0
-2026-05-21 15:54,llama,2,"op4trust,tr3cgmnz,tr3bcraz,qfnrincr,q4samesm,op7gdevo,q7wwhhx,q7jbmmcc,q7mgcc,q5gveqaa,opincdif,opnucpol,stalllf,nofutr,sfmhdprs,op5happz,opnbmtcn,wllive,mempltgp",266,42,0.2481,1.0
-2026-05-21 16:37,llama,8,"op4trust,tr3cgmnz,tr3bcraz,qfnrincr,q4samesm,op7gdevo,q7wwhhx,q7jbmmcc,q7mgcc,q5gveqaa,opincdif,opnucpol,stalllf,nofutr,sfmhdprs,op5happz,opnbmtcn,wllive,mempltgp",266,42,0.2579,1.0
-2026-05-21 17:45,llama,16,"op4trust,tr3cgmnz,tr3bcraz,qfnrincr,q4samesm,op7gdevo,q7wwhhx,q7jbmmcc,q7mgcc,q5gveqaa,opincdif,opnucpol,stalllf,nofutr,sfmhdprs,op5happz,opnbmtcn,wllive,mempltgp",266,42,0.2367,1.0
+2026-05-21 15:22,llama_tuned_8b,2,"op4trust,tr3cgmnz,tr3bcraz,qfnrincr,q4samesm,op7gdevo,q7wwhhx,q7jbmmcc,q7mgcc,q5gveqaa,opincdif,opnucpol,stalllf,nofutr,sfmhdprs,op5happz,opnbmtcn,wllive,mempltgp",266,42,0.2539,1.0
+2026-05-21 15:54,llama_tuned_8b,2,"op4trust,tr3cgmnz,tr3bcraz,qfnrincr,q4samesm,op7gdevo,q7wwhhx,q7jbmmcc,q7mgcc,q5gveqaa,opincdif,opnucpol,stalllf,nofutr,sfmhdprs,op5happz,opnbmtcn,wllive,mempltgp",266,42,0.2481,1.0
+2026-05-21 16:37,llama_tuned_8b,8,"op4trust,tr3cgmnz,tr3bcraz,qfnrincr,q4samesm,op7gdevo,q7wwhhx,q7jbmmcc,q7mgcc,q5gveqaa,opincdif,opnucpol,stalllf,nofutr,sfmhdprs,op5happz,opnbmtcn,wllive,mempltgp",266,42,0.2579,1.0
+2026-05-21 17:45,llama_tuned_8b,16,"op4trust,tr3cgmnz,tr3bcraz,qfnrincr,q4samesm,op7gdevo,q7wwhhx,q7jbmmcc,q7mgcc,q5gveqaa,opincdif,opnucpol,stalllf,nofutr,sfmhdprs,op5happz,opnbmtcn,wllive,mempltgp",266,42,0.2367,1.0
 2026-05-21 20:41,chatgpt,16,"op4trust,tr3cgmnz,tr3bcraz,qfnrincr,q4samesm,op7gdevo,q7wwhhx,q7jbmmcc,q7mgcc,q5gveqaa,opincdif,opnucpol,stalllf,nofutr,sfmhdprs,op5happz,opnbmtcn,wllive,mempltgp",266,42,0.3084,1.0
 2026-05-21 23:31,chatgpt,8,"op4trust,tr3cgmnz,tr3bcraz,qfnrincr,q4samesm,op7gdevo,q7wwhhx,q7jbmmcc,q7mgcc,q5gveqaa,opincdif,opnucpol,stalllf,nofutr,sfmhdprs,op5happz,opnbmtcn,wllive,mempltgp",266,42,0.3524,1.0
+2026-05-22 09:01,chatgpt,2,"op4trust,tr3cgmnz,tr3bcraz,qfnrincr,q4samesm,op7gdevo,q7wwhhx,q7jbmmcc,q7mgcc,q5gveqaa,opincdif,opnucpol,stalllf,nofutr,sfmhdprs,op5happz,opnbmtcn,wllive,mempltgp",266,42,0.373,1.0
