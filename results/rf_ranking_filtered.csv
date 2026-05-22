@@ -1,0 +1,163 @@
+variable,importance_score,label,valid_rate
+xxfstjb,2.437507088717891,Occupation of the First Job,0.9721804511278196
+ppjxxe08,2.307430620479299,Occupation of Father at Age 15 (ISCO08),0.9161654135338346
+age1mg,1.6456910632423098,Age at First Marriage,0.8240601503759398
+incmain,1.4264368749269407,Main Income Source,0.9973684210526316
+szstffst,1.18945436117279,Corporation Size of the First Job,0.9078947368421053
+szhsincm,1.1332851338936414,Household Annual Income,0.91203007518797
+ssszinca,1.09990834072885,Spouse Annual Income: Overall,0.9466165413533835
+domarry,1.029695584360883,Marital Status,1.0
+szexed,1.008781648573002,Educational Costs in Household Expenses,0.9454887218045113
+st5ssrel,0.8255703911152378,Satisfaction with Relationship with Spouse,0.9947368421052631
+hrtv,0.7796458096099178,Hours of Watching TV,0.9887218045112782
+szffonly,0.7564486904392083,Number of Family Members Except Respondent,0.9988721804511278
+szincomx,0.6714412953667023,Respondent Annual Income: Main Job,0.9454887218045113
+szffttl,0.6682875875025684,Number of Family Members Including Respondent,0.9973684210526316
+ssszincm,0.615802183302395,Spouse Annual Income: Main Job,0.9541353383458646
+xmarry,0.5571010948158509,Marital Status,1.0
+pmdth,0.5060845371193499,Presence of Parents,0.9981203007518797
+dopnone,0.4965526177087305,Having Pets: No Pets,0.9984962406015038
+ffhead,0.4711067898793424,Head of the Household,0.9992481203007518
+doecnone,0.470307110310645,Use of Eco-products: None of the above,0.9898496240601504
+incpen,0.4453824907895912,Income Source: Pension,0.9992481203007518
+opismm,0.4292405532041915,View on Assistance between Generations: From Married Man to His Own Parent,0.9766917293233083
+enhmwp,0.4174236532971974,Environmental Damage: Water Pollution,0.9898496240601504
+opismwss,0.4151673421684478,View on Assistance between Generations: From Married Woman to Husbands Parent,0.974812030075188
+opismw,0.4133036553770266,View on Assistance between Generations: From Married Woman to Her Own Parent,0.975187969924812
+cc01lvt,0.41123766363347,Child 01: Living with/separately/temporarily leaving home,0.7556390977443609
+enhmsp,0.3821675710427776,Environmental Damage: Soil Pollution,0.9902255639097745
+opismmss,0.3615478774066396,View on Assistance between Generations: From Married Man to Wife's Parent,0.975187969924812
+fq7ckdnr,0.3312672548549031,Frequency of Preparing Dinner,0.9954887218045113
+cc01mg,0.3308707666209736,Child 01: Marital Status,0.7545112781954887
+ppjbsz15,0.3266850921529282,Corporation Size of Father at Age 15,0.9097744360902256
+xnumcowk,0.3254251153427049,Number of Companies You Worked for,0.9763157894736842
+tr3copz,0.3244229222497998,Trust in Police,0.9936090225563909
+q7ffndmn,0.3078969617229036,Norms of Family Inheritance: Requirement of Son,0.9921052631578947
+doecmnp,0.306356592221675,Use of Eco-products: Midnight Power,0.9898496240601504
+st5ecny,0.3020603062485489,Satisfaction with Household Budget Situation,0.9921052631578947
+tr3spcaz,0.3014855138640245,Trust in Courts,0.9932330827067669
+enhmap,0.2932486814930723,Environmental Damage: Air Pollution,0.9906015037593985
+fq7wash,0.2889640656859677,Frequency of Doing Laundry,0.9947368421052631
+st5lifey,0.2884553238249833,Satisfaction with Family Life,0.9932330827067669
+fq7clean,0.2870945326697198,Frequency of Cleaning House,0.9966165413533835
+pplstsch,0.2809107529474482,Last School Father Attended,0.7725563909774437
+st5hlthy,0.2772894414021597,Satisfaction with Health Condition,0.9939849624060151
+tr3finz,0.2758941108974262,Trust in Financial Institutions,0.9932330827067669
+tr3schlz,0.2727236933705673,Trust in Schools,0.9913533834586467
+xhsrate,0.270349732617251,Rate of Students Going on to Higher Schools from High School,0.8511278195488722
+st5leisy,0.2683407812519165,Satisfaction with Leisure Activities,0.9894736842105263
+q7mgmnhp,0.2681223628366297,Norms of Marriage: Marriage Is Happy for Men,0.9917293233082707
+dopdogi,0.2580878648211031,Having Pets: Dogs (Indoor),0.9984962406015038
+q7mgwnhp,0.2562095476104826,Norms of Marriage: Marriage Is Happy for Women,0.9894736842105263
+q7prman,0.2439018581440957,Norms of Placing Priority on Family: Precedence of Husbands Family Over Wifes,0.9909774436090225
+tr3acdaz,0.2434658240524261,Trust in Scholars,0.9928571428571429
+tr3defz,0.2430809286530652,Trust in Self-Defense Forces,0.9921052631578947
+fqfflsr,0.2360076890480843,Frequency of Leisure Activities with Family,0.9676691729323308
+mmjbtp15,0.2306648979093392,Mother Work at Age 15,0.9706766917293234
+doecwc,0.2278318154238527,Use of Eco-products: Ecowill/Ecocute,0.9898496240601504
+fq6nwsin,0.2276611131806063,Frequency of Reading News Articles on the Internet,0.9962406015037594
+q7wwhphh,0.2236691646722028,Norms of Gender: Wife Should Help Husband,0.9921052631578947
+q7ffauth,0.213068674428079,Norms of Family Inheritance: Respect of Fathers Authority,0.9928571428571429
+st5friy,0.2096311349484271,Satisfaction with Friendship,0.9917293233082707
+tr3nwspz,0.2094663665280259,Trust in Newspapers,0.9932330827067669
+q7mgcoh,0.2086212656575996,Norms of Marriage: Don't Mind Cohabitation,0.9932330827067669
+q7ffhnr,0.2019011391419801,Norms of Family Inheritance: Children Should Be Honor to Their Parent,0.9932330827067669
+tr3tvz,0.1986373983906924,Trust in TV,0.9939849624060151
+tp5loc15,0.1980264023209013,Place of Residence at Age 15: Size of Municipality,1.0
+op5ccare,0.1909713171049417,Responsibility of Child Care,0.9714285714285714
+dorl,0.1907090868710226,Practice Religion,0.9921052631578947
+incself,0.1869779122124187,Income Source: Respondent Income,0.9992481203007518
+st5areay,0.1866141977797377,Satisfaction with Area of Residence,0.9887218045112782
+op10lvl,0.1842298679317247,Position in the Society in 10 Level,0.9672932330827068
+op5srwfy,0.1828357945381367,Responsibility of Livelihood Security for Elderly,0.9774436090225563
+op5ffinx,0.1827242460304123,Comparison of Household Income with Others,0.9917293233082707
+tr3hsplz,0.1827071844479803,Trust in Hospitals,0.9924812030075187
+op5cced,0.1805450050898696,Responsibility of Education,0.9721804511278196
+op5srmdy,0.179974292322747,Responsibility of Care for Elderly,0.9763157894736842
+cc01job,0.178839787202645,Child 01: Working Now,0.7530075187969925
+q7mgold,0.177023274158257,Norms of Marriage: Husband Should Be Older,0.9932330827067669
+q7mgdvcc,0.1766880693957711,Norms of Marriage: Wait to Divorce until Children Growing Up,0.9936090225563909
+inflpmmg,0.1680035602259336,Parents Influence on Decision to Marry,0.7733082706766917
+op5hlthz,0.16753467059831,Health Condition,0.9883458646616541
+ppjb15,0.1669129264131014,Employment Relationship of Father at Age 15,0.9992481203007518
+incsp,0.1667243889339478,Income Source: Spouse Income,0.9992481203007518
+xcc18,0.1650280841997683,Presence of Children Aged 18 or Older,0.8360902255639098
+tr3rlgpz,0.1607001359072663,Trust in Religious Organizations,0.9936090225563909
+dopcati,0.1600233218265129,Having Pets: Cats (Indoor),0.9984962406015038
+xliveyr,0.1543502424467747,Years Living in the Same Place,0.9823308270676692
+domarryz,0.1458677869869727,Marital Status (Self-administered Questionnaire),0.837593984962406
+sizehmt,0.1443481332018203,Size of Hometown,1.0
+doeclmc,0.1426439195366303,Use of Eco-products: Low-emission Car,0.9898496240601504
+disflood,0.1403335447240854,Possibility of Natural Disaster: Flood from High Tide and River Overflow,0.9939849624060151
+axdis,0.1375578409149234,Anxiety about Natural Disaster,0.9966165413533835
+tr3cityz,0.1344547315005627,Trust in Members of Municipal Councils,0.9906015037593985
+fq7garb,0.1341663351014414,Frequency of Garbage Disposal,0.9924812030075187
+q7mgecsc,0.1335615340975532,Norms of Marriage: The Biggest Benefit is Economic Stability,0.9921052631578947
+q7mgdvgd,0.1327973267377966,Norms of Marriage: Divorce Is Best Solution,0.9951127819548872
+sfmhpeac,0.1300697185368978,Mental Health: Felt Calm and Peaceful,0.9958646616541353
+tr3unnz,0.129444529961751,Trust in Labor Unions,0.9909774436090225
+sfmhengy,0.1276006629658758,Mental Health: Had a lot of Energy,0.9958646616541353
+fq7shop,0.1251693010902342,Frequency of Grocery Shopping,0.9966165413533835
+op5levk,0.1239573884645968,Position in the Society in 5 Strata,0.9909774436090225
+fq7rph,0.1201765453182992,Frequency of Home Repair,0.9909774436090225
+axecnsf,0.1200741939279929,Anxiety about Your Economic Situation in the Future,0.9962406015037594
+tr3corpz,0.119478478749258,Trust in Major Companies,0.9921052631578947
+do7drink,0.1138841445123569,Frequency of Drinking,0.9909774436090225
+fq4elc,0.1135371344717915,Frequency of Ecological Behavior: Save Electricity　,0.9954887218045113
+szffothr,0.1097472921956389,Number of Other Family Members,0.999624060150376
+fqsport,0.1096466384368578,Frequency of Regularly Practiced Sports,0.9962406015037594
+doecslp,0.1071230596444465,Use of Eco-products: Solar Pannel,0.9898496240601504
+fq7frsee,0.1038769154208926,Frequency of Meals with Friends,0.9932330827067669
+q7prff,0.103795446821835,Norms of Placing Priority on Family: Precedence of Family Over Self,0.9932330827067669
+fq5newsp,0.1034782118436188,Frequency of Reading Newspaper,0.9973684210526316
+fq7ffdnr,0.1029141336000925,Frequency of Family Dinner,0.9928571428571429
+xgetjob,0.1004106972765849,Time of Getting the First Job,0.999624060150376
+distsnm,0.0985872059085657,Possibility of Natural Disaster: Tsunami,0.9947368421052631
+disland,0.0965263885886201,Possibility of Natural Disaster: Landslide and Avalanche of Sand and Stone,0.9936090225563909
+dopothr,0.0921950407209161,Having Pets: Others,0.9984962406015038
+ownhouse,0.0893931564640332,Type of Residence: Owned,0.999624060150376
+disquake,0.0887787257292871,Possibility of Natural Disaster: Earthquake,0.9947368421052631
+dopdoge,0.0860054079061971,Having Pets: Dogs (Outdoor),0.9984962406015038
+memrl,0.0842467281359078,Membership of Religious Groups,0.9936090225563909
+op5schpf,0.0811336240458279,Class Rank in the Senior of Junior High School,0.9898496240601504
+fq4denki,0.0797477486141642,Frequency of Ecological Behavior: Turn off lights not in use,0.9984962406015038
+dosmokex,0.073588282340321,Experience of Smoking,0.9966165413533835
+xnumsise,0.0712979345430258,Number of Older Sisters,0.9951127819548872
+nummarry,0.065868405086883,Number of Marriage,0.8330827067669173
+remote15,0.0653589969327962,Place of Residence at Age 15: Rural or Not,0.9785714285714285
+xssrmg,0.0639940451490005,First Marriage or Remarriage for Spouse,0.7766917293233083
+disvolc,0.0634536936245113,Possibility of Natural Disaster: Volcanic Eruption,0.9936090225563909
+axfdrad,0.0607571990011602,Anxiety about Food Contamination by Radioactive Substances,0.9958646616541353
+distsnow,0.0587812812093552,Possibility of Natural Disaster: Heavy Snow,0.9943609022556391
+commdis,0.0586592197382102,Community Cooperation at Natural Disaster,0.9969924812030075
+disnuc,0.057649555872252,Possibility of Natural Disaster: Accidents of Nuclear Power Plants,0.9924812030075187
+dolookjb,0.0569032975647504,Searching New Job Now,0.9977443609022556
+xssnbroe,0.0545935274585411,Number of Spouse Older Brothers,0.7763157894736842
+opnbass,0.0537033501219608,Neighborhood Environment: Willing to Provide Assistance,0.9973684210526316
+dopcate,0.0524174955959543,Having Pets: Cats (Outdoor),0.9984962406015038
+memsport,0.0504402274924916,Membership of Sports Groups,0.9928571428571429
+tp1stjbs,0.0500102473466464,Employment Status of the First Job,0.912781954887218
+opffix15,0.0490786557498376,Comparison of Household Income with Others at Age 15,0.9796992481203007
+incpar,0.0460981924014944,Income Source: Parents Income,0.9992481203007518
+memhobby,0.0435298018414791,Membership of Hobby Groups,0.9947368421052631
+opppcare,0.0431712989227173,Responsibility of Care for Elderly Parent,0.9890977443609023
+xnumsisy,0.0424763726871571,Number of Younger Sisters,0.9951127819548872
+xnumbroe,0.0417017558339764,Number of Older Brothers,0.9951127819548872
+memvlntr,0.0396083511373706,Membership of Social Service Groups,0.9939849624060151
+xx8plpty,0.0323682214741634,Political Support,0.9898496240601504
+xssnsise,0.0303310523531826,Number of Spouse Older Sisters,0.7763157894736842
+xhssub,0.0253801089659406,Course Learned in High School,0.8556390977443609
+nogoal,0.0246062322830594,Hopelessness: No Hope for Reaching Goals,0.987593984962406
+xnumbroy,0.0236861527285028,Number of Younger Brothers,0.9951127819548872
+axcontcm,0.0233413198745584,Anxiety about the Sustainability of the Community,0.9981203007518797
+dolstsch,0.0208051783974317,Completion of the Last School,0.999624060150376
+memind,0.0191343651418155,Membership of Trade Associations,0.9954887218045113
+fstmtss,0.0187297711102519,How Respondent Met Spouse,0.7657894736842106
+appccnum,0.0179233330985281,Ideal Number of Children,0.9838345864661654
+cc01sex,0.0166698056991655,Child 01: Sex,0.7684210526315789
+appccsxb,0.0159619689493602,Desired Sex of Child,0.9451127819548872
+memcivil,0.0158452054523895,Membership of Citizens Movement,0.9936090225563909
+incsave,0.0157879440400063,Income Source: Savings,0.9992481203007518
+tp1stjb,0.0150201893703692,Employment Relationship of the First Job,0.9766917293233083
+ctvw20,0.0116174113149585,Place of Residence at Age 20: Experience of Moving,0.999624060150376
+fq5read,0.0110601707301878,Number of Books You Read a Month,0.9969924812030075

@@ -57,11 +57,12 @@ Persona0/
 ├── persona20172018.ipynb   # Main notebook (active)
 ├── config.py               # Variable classification + helpers (EXCLUDES, CORE_DEMOGRAPHICS, OUTCOMES)
 ├── data/
-│   ├── 20172018_data.sav       # JGSS source data (SPSS format)
-│   ├── rf_ranking_filtered.csv # Saved RF importance ranking
-│   ├── personas_by_k.json      # Saved persona sets for all k values
-│   ├── results_<model>.csv     # Saved simulated answers per LLM
-│   └── metrics_df.csv          # Saved JSD + valid-rate metrics
+│   ├── 20172018_data.sav            # JGSS source data (SPSS format)
+│   ├── rf_ranking_filtered.csv      # Saved RF importance ranking
+│   ├── personas_by_k.json           # Saved persona sets for all k values
+│   ├── results_{model}_k{k}.csv     # Simulated answers per LLM × persona-k (e.g. results_llama_k2.csv)
+│   ├── metrics_all.csv              # Accumulated JSD + valid-rate metrics across all runs
+│   └── run_log.csv                  # One row per completed batch run (timestamp, model, k, mean JSD)
 └── p0book.ipynb            # Original notebook (archived)
 ```
 
@@ -101,13 +102,14 @@ LLAMA_MODEL_ID=llama-3.1-swallow-8b-instruct-v0.2-i1
 | 5 | RF Feature Selection | Leave-one-out RF ranking, build `persona_slices` |
 | 6 | Persona Creation | Build `personas_by_k` for all top-*k* values |
 | 7 | Checkpoint — Save / Load | Persist or restore RF ranking, personas, results |
-| 8 | Simulation | Run each LLM (one cell per model) |
-| 9 | Results Visualization | JSD bar charts, valid-rate, distribution comparison |
+| 8 | Simulation Build | `ALL_QUESTIONS` dict (19 vars) + prompt helpers |
+| 9 | LLMs | One cell per model (Gemini, ChatGPT, Claude, Llama) |
+| 10 | Results Visualization | JSD bar charts, valid-rate, distribution comparison |
 | — | Archive | Reference code; not part of active pipeline |
 
-**Run order for a fresh session:** Parts 1 → 2 → 4 → 5 → 6 → 7 (Load) → 8 → 7 (Save) → 9
+**Run order for a fresh session:** Parts 1 → 2 → 4 → 5 → 6 → 7 (Load) → 8 → 9 → 7 (Save) → 10
 
-**Run order after a checkpoint:** Parts 1 → 2 → 7 (Load) → 9
+**Run order after a checkpoint:** Parts 1 → 2 → 7 (Load) → 10
 
 ---
 
