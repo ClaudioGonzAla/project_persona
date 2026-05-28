@@ -1,6 +1,5 @@
 # Secrets and environment files
 .env
-.env.*
 *.env
 
 # API keys and credentials
@@ -12,9 +11,15 @@ credentials.*
 __pycache__/
 *.py[cod]
 
+# Conda environment (local, not committed)
+.conda/
+
 # Data files
 Background*
 20172018_data*
 JGSS-2*
 data/metrics_df.csv
 data_*
+
+# Testing
+*test*
