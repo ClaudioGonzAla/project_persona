@@ -1,6 +1,6 @@
 # Persona0
 
-Simulates Japanese General Social Survey (JGSS) responses using LLMs and measures how closely they match the real survey distribution using Jensen-Shannon Divergence (JSD).
+Simulates Japanese General Social Survey (JGSS) responses using LLMs and measures how closely they match real survey distributions using Jensen-Shannon Divergence (JSD).
 
 Adapted from Rupprecht et al. (2025), *"German General Social Survey Personas"* ([arXiv:2511.21722](https://arxiv.org/abs/2511.21722)) for the JGSS-2017/2018 dataset.
 
@@ -8,13 +8,13 @@ Adapted from Rupprecht et al. (2025), *"German General Social Survey Personas"* 
 
 ## How It Works
 
-1. **Variable selection** — A leave-one-out Random Forest ranks all non-demographic, non-outcome JGSS variables by their collective importance. This produces a single ranked list, sliced at `TOP_K_VALUES = [2, 4, 8, 16, 32, 64, 128]` to create persona sets of varying richness.
+1. **Variable selection** — A leave-one-out Random Forest ranks all non-demographic, non-outcome JGSS variables by collective importance. The ranked list is sliced at top-*k* values to create persona sets of varying richness.
 
-2. **Persona construction** — Each of the 2,660 respondents becomes a JSON persona: 10 fixed core demographic variables + the top-*k* RF variables selected by `ACTIVE_PERSONA_K`.
+2. **Persona construction** — Each of the 2,660 respondents becomes a JSON persona: 10 fixed core demographics + the top-*k* RF-selected variables. All labels are in Japanese, including ISCO-08 occupation codes (translated via `data/isco08_ja.json`).
 
-3. **Simulation** — Each persona is prompted with each outcome question in Japanese. The LLM returns a single integer on the question's scale.
+3. **Simulation** — N=266 respondents (10% random sample, seed=42) are prompted with each outcome question in Japanese. The LLM returns a single integer on the question's scale.
 
-4. **Evaluation** — Simulated answer distributions are compared against the real JGSS distribution using JSD (lower = better match). Results are stored per-model in `results_by_model` and summarized in `metrics_df`.
+4. **Evaluation** — Simulated answer distributions are compared to real JGSS distributions using JSD (lower = better). Results are saved per (model × k) to `results/`.
 
 ---
 
@@ -31,7 +31,7 @@ Variable roles (defined in `config.py`):
 | Excluded | 30 | Metadata, identifiers, empty variables, redundant re-codings |
 | Core demographics | 10 | Fixed in every persona (sex, age, education, income, occupation, etc.) |
 | Outcomes | 19 | Held-out prediction targets across 6 thematic categories |
-| RF pool | remainder | Compete for top-*k* persona slots via the importance ranking |
+| RF pool | ~500 | Compete for top-*k* persona slots via importance ranking |
 
 **Outcome categories:** Trust · Ethnocentrism · Gender & family norms · Social inequality · Wellbeing · Community & civic
 
@@ -46,90 +46,132 @@ Missing value codes `[9, 99, 999]` are replaced with `NaN` on load.
 | `gemini` | gemini-2.5-flash | Google |
 | `chatgpt` | gpt-4o-mini | OpenAI |
 | `claude` | claude-haiku-4-5 | Anthropic |
-| `llama` | llama-3.1-swallow-8b-instruct-v0.2-i1 | Local (Ollama) |
+| `llama_tuned_8b` | llama-3.1-swallow-8b-instruct-v0.2-i1 | Local (LM Studio) |
+| `llama_base_8b` | meta-llama-3.1-8b-instruct | Local (LM Studio) |
+| `llama_tuned_70b` | llama-3.1-swallow-70b-instruct | Lab server |
+| `llama_base_70b` | meta-llama-3.3-70b-instruct | Lab server |
 
 ---
 
-## Files
+## File Structure
 
 ```
 Persona0/
-├── persona20172018.ipynb   # Main notebook (active)
-├── config.py               # Variable classification + helpers (EXCLUDES, CORE_DEMOGRAPHICS, OUTCOMES)
-├── data/
-│   ├── 20172018_data.sav            # JGSS source data (SPSS format)
-│   ├── rf_ranking_filtered.csv      # Saved RF importance ranking
-│   ├── personas_by_k.json           # Saved persona sets for all k values
-│   ├── results_{model}_k{k}.csv     # Simulated answers per LLM × persona-k (e.g. results_llama_k2.csv)
-│   ├── metrics_all.csv              # Accumulated JSD + valid-rate metrics across all runs
-│   └── run_log.csv                  # One row per completed batch run (timestamp, model, k, mean JSD)
-└── p0book.ipynb            # Original notebook (archived)
+├── persona20172018.ipynb       # Main simulation notebook (Parts 1–6 + Appendices A–C)
+├── visualization.ipynb         # Standalone visualization (loads from data/ + results/)
+├── run_simulation.py           # CLI script for remote/server execution
+├── config.py                   # Variable classification (EXCLUDES, CORE_DEMOGRAPHICS, OUTCOMES)
+├── .env.example                # Environment variable template
+│
+├── data/                       # Source data + precomputed artifacts (no LLM output here)
+│   ├── 20172018_data_jap.sav   # JGSS source — Japanese labels (active)
+│   ├── 20172018_data.sav       # JGSS source — English labels (archival)
+│   ├── isco08_ja.json          # ISCO-08 occupation code → Japanese label map
+│   ├── rf_ranking_filtered.csv # RF importance ranking (generated by Appendix B)
+│   ├── personas_by_k.json      # Persona sets for all k values (generated by Appendix C)
+│   └── question_bank.json      # Question text + scale info (auto-saved by Part 5)
+│
+├── results/                    # LLM outputs only
+│   ├── results_{model}_k{k}.csv   # Per-respondent simulated answers
+│   ├── metrics_all.csv            # JSD + valid-rate metrics, all runs
+│   ├── run_log.csv                # One row per completed batch
+│   └── viz_*.png                  # Saved plots from visualization.ipynb
+│
+├── Background/
+│   └── GermanPaper.pdf         # Rupprecht et al. (2025) reference paper
+└── archive/
+    └── p0book.ipynb            # Original prototype notebook
 ```
 
 ---
 
 ## Setup
 
-**1. Install dependencies** (run once in the notebook kernel):
+### 1. Install dependencies
 
-```python
-%pip install python-dotenv google-genai openai anthropic pandas numpy scikit-learn scipy matplotlib pyreadstat
+```bash
+pip install python-dotenv google-genai openai anthropic pandas numpy scikit-learn scipy matplotlib pyreadstat
 ```
 
-**2. Create a `.env` file** in this folder:
+### 2. Configure environment
 
-```env
-GEMINI_API_KEY=...
-OPENAI_API_KEY=...
-ANTHROPIC_API_KEY=...
-
-# Llama local endpoint (Ollama defaults shown)
-LLAMA_BASE_URL=http://localhost:1234/v1
-LLAMA_API_KEY=ollama
-LLAMA_MODEL_ID=llama-3.1-swallow-8b-instruct-v0.2-i1
+```bash
+cp .env.example .env
+# Edit .env and fill in your API keys
 ```
+
+### 3. Place JGSS data
+
+Copy `20172018_data_jap.sav` into `data/`. The RF ranking and personas are precomputed — no need to re-run Appendices B or C unless you change the variable configuration in `config.py`.
 
 ---
 
 ## Notebook Structure (`persona20172018.ipynb`)
 
-| Part | Section | Description |
-|---|---|---|
-| 1 | Setup | `%pip install` + all imports |
-| 2 | Configuration | All tunable parameters (see below) |
-| 3 | Connectivity Check | Smoke test for each API client |
-| 4 | Data | Load SAV, replace missing codes, run `config.sanity_check` |
-| 5 | RF Feature Selection | Leave-one-out RF ranking, build `persona_slices` |
-| 6 | Persona Creation | Build `personas_by_k` for all top-*k* values |
-| 7 | Checkpoint — Save / Load | Persist or restore RF ranking, personas, results |
-| 8 | Simulation Build | `ALL_QUESTIONS` dict (19 vars) + prompt helpers |
-| 9 | LLMs | One cell per model (Gemini, ChatGPT, Claude, Llama) |
-| 10 | Results Visualization | JSD bar charts, valid-rate, distribution comparison |
-| — | Archive | Reference code; not part of active pipeline |
+**Standard run — execute Parts 1 → 6 top-to-bottom:**
 
-**Run order for a fresh session:** Parts 1 → 2 → 4 → 5 → 6 → 7 (Load) → 8 → 9 → 7 (Save) → 10
+| Part | Description |
+|---|---|
+| 1 · Setup | Imports + API clients |
+| 2 · Configuration | All tunable parameters (`ACTIVE_PERSONA_K`, `MAX_PERSONAS`, `SAMPLE_SEED`, etc.) |
+| 3 · Data load | SAV → `df` + `var_labels` + `value_labels` |
+| 4 · Load Checkpoint | Restore RF ranking, personas, and prior results from `data/` + `results/` |
+| 5 · Simulation Build | Build `ALL_QUESTIONS` from SAV value labels, define prompt helpers |
+| 6 · LLMs | Per-run override cell at top, then one cell per model |
 
-**Run order after a checkpoint:** Parts 1 → 2 → 7 (Load) → 10
+**Appendices — run once during initial setup, or when changing configuration:**
+
+| Appendix | Description |
+|---|---|
+| A · Connectivity Check | Smoke test per API |
+| B · RF Feature Selection | Leave-one-out RF ranking → saves `data/rf_ranking_filtered.csv` |
+| C · Persona Creation | Builds personas for all k values → saves `data/personas_by_k.json` |
 
 ---
 
-## Key Configuration (Part 2)
+## Remote Execution (`run_simulation.py`)
 
-All parameters are centralized in the Configuration cell. Re-running it applies changes without a kernel restart.
+For running on a lab server without Jupyter. Requires the same `.env` and `data/` files.
+
+```bash
+# All three k values in one command (saves after each k, safe to interrupt between)
+python run_simulation.py --model llama_base_70b --k 2 8 16
+
+# Full multi-model sweep
+for model in llama_base_70b llama_tuned_70b; do
+    python run_simulation.py --model $model --k 2 8 16
+done
+
+# Safe test run (isolated output directory)
+python run_simulation.py --model llama_base_8b --k 2 --n 5 --results-dir results_test/
+```
+
+Copy back `results/` when done — `metrics_all.csv` deduplicates by (model × k) on merge.
+
+---
+
+## Key Parameters (Part 2 of notebook)
 
 | Parameter | Default | Description |
 |---|---|---|
-| `K_ACCUM` | `10` | Top-*k* features accumulated per RF model (per Rupprecht et al.) |
-| `MIN_VALID_RATE` | `0.75` | Variables below this valid-response rate are dropped from the RF pool |
-| `TOP_K_VALUES` | `[2,4,8,16,32,64,128]` | Persona sizes to build and compare |
-| `ACTIVE_PERSONA_K` | `2` | Which top-*k* slice feeds the current simulation run |
-| `MAX_PERSONAS` | `50` | Safety cap on API calls per run — set to `None` for the full 2,660 |
-| `ACTIVE_QUESTION_KEYS` | `['op4trust', 'stalllf', 'q5gveqaa']` | Outcome questions to simulate in this run |
+| `TOP_K_VALUES` | `[2, 8, 16, 32, 64, 128]` | Persona richness values to build in Appendix C |
+| `ACTIVE_PERSONA_K` | `2` | Which k slice feeds the current simulation run |
+| `MAX_PERSONAS` | `266` | Sample size per run (10% of N=2,660) |
+| `SAMPLE_SEED` | `42` | Reproducible random sample — same respondents across all (model × k) |
+| `ACTIVE_QUESTION_KEYS` | all 19 | Outcome questions to simulate (can subset for quick tests) |
 
 ---
 
-## Output
+## Current Results (2026-05-22)
 
-- **`results_by_model`** — dict of DataFrames, one per LLM. Columns = active question variable names, rows = persona indices.
-- **`metrics_df`** — one row per (model × question). Columns: `model`, `question_var`, `persona_k`, `valid_answers`, `total_personas`, `jsd`.
-- **Token usage** — tracked per model during simulation; cost estimate printed at end of each run.
+All runs: N=266, seed=42, temperature=0.7, 100% valid rate.
+
+| Model | k=2 | k=8 | k=16 |
+|---|---|---|---|
+| `llama_base_8b` | 0.236 | 0.236 | 0.228 |
+| `llama_tuned_8b` | 0.248 | 0.258 | 0.237 |
+| `chatgpt` (gpt-4o-mini) | 0.373 | 0.352 | 0.308 |
+
+**Key finding:** Llama-3.1-8B-Instruct (base, no Japanese tuning) outperforms Llama-Swallow-8B (Japanese fine-tuned) at every k value. Japanese continued pretraining appears to have hurt distribution-matching performance — a counterintuitive result worth investigating at 70B scale.
+
+**Next milestone:** 70B runs (`llama_base_70b` = Llama-3.3-70B-Instruct, the hero model from the German paper; `llama_tuned_70b` = Swallow-70B) on lab server.
