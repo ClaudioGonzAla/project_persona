@@ -1,0 +1,10 @@
+python-dotenv
+google-genai
+openai
+anthropic
+pandas
+numpy
+scikit-learn
+scipy
+matplotlib
+pyreadstat
