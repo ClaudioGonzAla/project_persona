@@ -9,3 +9,5 @@ timestamp,model,persona_k,questions,n_personas,sample_seed,mean_jsd,valid_rate
 2026-05-22 10:52,llama_base_8b,2,"op4trust,tr3cgmnz,tr3bcraz,qfnrincr,q4samesm,op7gdevo,q7wwhhx,q7jbmmcc,q7mgcc,q5gveqaa,opincdif,opnucpol,stalllf,nofutr,sfmhdprs,op5happz,opnbmtcn,wllive,mempltgp",266,42,0.2356,1.0
 2026-05-22 11:35,llama_base_8b,8,"op4trust,tr3cgmnz,tr3bcraz,qfnrincr,q4samesm,op7gdevo,q7wwhhx,q7jbmmcc,q7mgcc,q5gveqaa,opincdif,opnucpol,stalllf,nofutr,sfmhdprs,op5happz,opnbmtcn,wllive,mempltgp",266,42,0.2362,1.0
 2026-05-22 13:01,llama_base_8b,16,"op4trust,tr3cgmnz,tr3bcraz,qfnrincr,q4samesm,op7gdevo,q7wwhhx,q7jbmmcc,q7mgcc,q5gveqaa,opincdif,opnucpol,stalllf,nofutr,sfmhdprs,op5happz,opnbmtcn,wllive,mempltgp",266,42,0.2281,1.0
+2026-06-01 17:35,llama_tuned_8b,4,"op4trust,tr3cgmnz,tr3bcraz,qfnrincr,q4samesm,op7gdevo,q7wwhhx,q7jbmmcc,q7mgcc,q5gveqaa,opincdif,opnucpol,stalllf,nofutr,sfmhdprs,op5happz,opnbmtcn,wllive,mempltgp",266,42,0.3534,1.0
+2026-06-01 17:50,llama_tuned_8b,32,"op4trust,tr3cgmnz,tr3bcraz,qfnrincr,q4samesm,op7gdevo,q7wwhhx,q7jbmmcc,q7mgcc,q5gveqaa,opincdif,opnucpol,stalllf,nofutr,sfmhdprs,op5happz,opnbmtcn,wllive,mempltgp",266,42,0.3374,1.0
